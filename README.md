@@ -208,7 +208,7 @@ Kelas induk Layanan diubah menjadi abstract class dan memiliki sebuah abstract m
 ---
 ## Penerapan Interface
 
-* Penerapan Interface dilakukan dengan membuat file Interface bernama DiskonKhusus.java. Interface ini kemudian diimplementasikan (implements) oleh kelas LayananJahitBaru.java. Logikanya, jika total biaya jahit baju baru milik pelanggan di atas Rp 250.000, sistem akan otomatis memberikan potongan diskon sebesar 10%.
+Penerapan Interface dilakukan dengan membuat file Interface bernama DiskonKhusus.java. Interface ini kemudian diimplementasikan (implements) oleh kelas LayananJahitBaru.java. Logikanya, jika total biaya jahit baju baru milik pelanggan di atas Rp 250.000, sistem akan otomatis memberikan potongan diskon sebesar 10%.
 
 <img width="441" height="72" alt="image" src="https://github.com/user-attachments/assets/28767175-4ec0-45dc-a295-f1698765c357" />
 
