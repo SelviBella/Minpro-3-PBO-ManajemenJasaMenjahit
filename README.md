@@ -147,25 +147,79 @@ Program menggunakan fungsi input.hasNextInt() untuk mengecek inputan user. Jika 
 ---
 ## Penerapan Encapsulation & Inheritance
 
-Semua atribut penting di dalam kelas model (seperti nama, nomor telepon, dan alamat) dikunci menggunakan hak akses private. Variabel *idPesanan* di dalam file Pesanan.java juga sudah diubah menjadi *private* agar datanya lebih aman, dan akses pembacaannya dari luar kelas harus lewat fungsi *Getter.
+**Encapsulation**
 
+Semua atribut penting di dalam kelas model (seperti nama, nomor telepon, dan alamat) dikunci menggunakan hak akses private agar datanya lebih aman dan akses pembacaan dari luar kelas harus melalui fungsi Getter.
 
+<img width="1216" height="452" alt="image" src="https://github.com/user-attachments/assets/d8e5398b-dc93-4a0a-87ad-5ee1d79ba8ca" />
 
+---
+**Inheritance (Pewarisan)**
 
+Kelas Layanan bertindak sebagai kelas induk (Superclass) yang mewariskan atribut umum ke kelas anak (Subclass) yaitu LayananJahitBaru dan LayananPermak memakai kata kunci extends.
 
+* Inheritance pada Kelas LayananJahitBaru.java
 
+<img width="736" height="167" alt="image" src="https://github.com/user-attachments/assets/b54611cc-be85-4555-beeb-bb16564d463a" />
 
+---
+* Inheritance pada Kelas LayananPermak.java
 
+<img width="727" height="155" alt="image" src="https://github.com/user-attachments/assets/6c4871fb-abf5-4485-8d66-68b972f813df" />
 
+---
+## Penerapan Polymorphism dan Abstraction
 
+### Polymorphism
 
+**1. Method Overriding**
 
+Kelas anak menulis ulang fungsi hitung biaya dari kelas induknya. Di LayananJahitBaru ada tambahan biaya kain Sutra sebesar Rp 30.000, sedangkan di LayananPermak ada tambahan Rp 15.000 kalau tingkat kesulitannya "Berat".
 
+* Overriding pada Kelas LayananJahitBaru.java
 
+<img width="811" height="457" alt="image" src="https://github.com/user-attachments/assets/6d110c27-7ca5-463f-a235-a4ee845b81ca" />
 
+---
+* Overriding pada Kelas LayananPermak.java
+<img width="831" height="263" alt="image" src="https://github.com/user-attachments/assets/0b52950f-4dbd-41d4-9260-e4f00cfe09f1" />
 
+---
+**2, Method Overloading**
 
+Diterapkan pada kelas Pesanan.java dengan membuat dua fungsi bernama sama tetapi parameter di dalam tanda kurungnya berbeda:
 
+* Versi Biasa untuk mencetak Nota Lengkap
 
+<img width="832" height="295" alt="image" src="https://github.com/user-attachments/assets/bf323f8d-053d-4353-ac95-820e8d9e3c78" />
 
+---
+* Versi Overload untuk mencetak Nota Ringkas
 
+<img width="1552" height="142" alt="image" src="https://github.com/user-attachments/assets/fd59eece-f13b-4e16-aa10-edfdc908d88d" />
+
+---
+### Abstraction
+
+Kelas induk Layanan diubah menjadi abstract class dan memiliki sebuah abstract method tanpa isi yaitu public abstract double hitungTotalBiaya(int jumlah);. Hal ini membuat kelas induk tidak bisa dibuat objeknya langsung, dan memaksa kelas anak untuk membuat rumus hitung biayanya masing-masing.
+
+<img width="622" height="237" alt="image" src="https://github.com/user-attachments/assets/0ac4e5cd-61bf-445d-8f8f-e2fea8e1dece" />
+
+---
+## Penerapan Interface
+
+* Penerapan Interface dilakukan dengan membuat file Interface bernama DiskonKhusus.java. Interface ini kemudian diimplementasikan (implements) oleh kelas LayananJahitBaru.java. Logikanya, jika total biaya jahit baju baru milik pelanggan di atas Rp 250.000, sistem akan otomatis memberikan potongan diskon sebesar 10%.
+
+<img width="441" height="72" alt="image" src="https://github.com/user-attachments/assets/28767175-4ec0-45dc-a295-f1698765c357" />
+
+---
+* Implementasi Interface di Subclass LayananJahitBaru.java
+
+<img width="805" height="645" alt="image" src="https://github.com/user-attachments/assets/0d799a35-9f80-40c4-a1fd-1d7668a137cd" />
+
+---
+* Pembuktian Hasil Penerapan Interface DiskonKhusus.java pada Pesanan Pelanggan
+
+<img width="316" height="368" alt="image" src="https://github.com/user-attachments/assets/d7f20c46-26ff-4b70-941d-2312908d872b" />
+
+Hasil penerapan interface DiskonKhusus.java ini dibuktikan pada pesanan pelanggan bernama Caca dan Ana dimana mereka memilih jasa jahit pakaian baru sebanyak 2 pcs dan memenuhi kondisi if pada diskon yaitu total harga pesanan melebihi Rp 250.000, maka sistem akan otomatis menjalankan fungsi Interface untuk menghitung potongan harga asli dikalikan dengan diskon 10%. Hasilnya akan muncul total akhir bersih dari diskon yang tercetak di nota invoice terakhir atau di total bayar.
